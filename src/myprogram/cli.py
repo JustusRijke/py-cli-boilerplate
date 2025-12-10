@@ -42,7 +42,7 @@ def setup_logging(debug, save_log):
 @click.option("--foobar", type=str, help="Example argument; prints value to stdout")
 @click.option("--debug", is_flag=True, help="Set log level to DEBUG")
 @click.option("--save-log", is_flag=True, help="Write log output to log.txt")
-@click.version_option()
+@click.version_option(package_name="myprogram")
 def cli(foobar, debug, save_log):
     logger = setup_logging(debug, save_log)
 

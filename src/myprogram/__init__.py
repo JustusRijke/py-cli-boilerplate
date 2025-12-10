@@ -1,4 +1,8 @@
+from importlib.metadata import version
+
 from .cli import cli
+
+__version__ = version("myprogram")
 
 
 def main(args=None):
@@ -8,4 +12,4 @@ def main(args=None):
         cli(args, standalone_mode=False)
 
 
-__all__ = ["main"]
+__all__ = ["main", "__version__"]

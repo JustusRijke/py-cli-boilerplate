@@ -29,3 +29,13 @@ jobs:
 
       - name: Run pytest
         run: pytest tests/ -v
+
+      - name: Verify version detection
+        run: |
+          VERSION=$(myprogram --version | grep -oP '\d+\.\d+\.\d+')
+          if [ "$VERSION" = "0.0.0" ]; then
+            echo "Error: Version is 0.0.0, setuptools-scm failed to detect version"
+            exit 1
+          fi
+          echo "Version detected correctly: $VERSION"
+        shell: bash
