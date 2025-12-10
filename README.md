@@ -56,7 +56,14 @@ pytest tests/
 
 Check code quality:
 ```bash
-ruff check .
+ruff check
+ruff format --check
+```
+
+Install pre-commit hook (runs ruff automatically before commits):
+```bash
+cp hooks/pre-commit .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
 ```
 
 ## Versioning
