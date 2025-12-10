@@ -1,5 +1,7 @@
 # py-cli-boilerplate
 
+[![CI](https://github.com/JustusRijke/py-cli-boilerplate/actions/workflows/ci.yml/badge.svg)](https://github.com/JustusRijke/py-cli-boilerplate/actions/workflows/ci.yml)
+
 A minimal Python CLI boilerplate template.
 
 ## Usage as Template
