@@ -8,7 +8,7 @@ build-backend = "hatchling.build"
 [project]
 name = "pycliboilerplate"
 dynamic = ["version"]
-description = "A minimal Python CLI boilerplate template"
+description = "A minimal Python CLI boilerplate template for GitHub-hosted projects."
 readme = "README.md"
 license = {text = "MIT"}
 authors = [{name = "Justus Rijke"}]
