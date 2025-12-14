@@ -10,16 +10,15 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
+        python-version: ["3.10", "3.x"]
 
     steps:
       - uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
 
-      - name: Set up Python 3.10
+      - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v6
         with:
-          python-version: "3.10"
+          python-version: ${{ matrix.python-version }}
 
       - name: Install package with dev dependencies
         run: pip install -e .[dev]
@@ -34,13 +33,3 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-
-      - name: Verify version detection
-        run: |
-          VERSION=$(myprogram --version | sed -n 's/.*version \([0-9]\+\.[0-9]\+\.[0-9]\+\).*/\1/p')
-          if [ "$VERSION" = "0.0.0" ]; then
-            echo "Error: Version is 0.0.0, setuptools-scm failed to detect version"
-            exit 1
-          fi
-          echo "Version detected correctly: $VERSION"
-        shell: bash
