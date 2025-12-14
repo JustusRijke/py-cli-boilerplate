@@ -81,6 +81,10 @@ Create a tag:
 git tag v1.0.0
 ```
 
+## Publishing
+
+This project includes a GitHub Actions workflow for publishing to PyPI. See the [pypa/gh-action-pypi-publish](https://github.com/pypa/gh-action-pypi-publish) documentation for configuration details.
+
 ## License
 
 MIT
