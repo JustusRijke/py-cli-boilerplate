@@ -1,46 +1,6 @@
-import logging
-
 import click
-import colorlog
 
-
-def setup_logging(verbosity, save_log):
-    if verbosity == 0:
-        level = logging.WARNING
-    elif verbosity == 1:
-        level = logging.INFO
-    else:
-        level = logging.DEBUG
-
-    formatter = colorlog.ColoredFormatter(
-        "%(log_color)s%(asctime)s %(levelname)-8s%(reset)s %(filename)s: %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S",
-        log_colors={
-            "DEBUG": "cyan",
-            "INFO": "green",
-            "WARNING": "yellow",
-            "ERROR": "red",
-            "CRITICAL": "red,bg_white",
-        },
-    )
-
-    console_handler = logging.StreamHandler()
-    console_handler.setFormatter(formatter)
-
-    logger = logging.getLogger()
-    logger.setLevel(level)
-    logger.addHandler(console_handler)
-
-    if save_log:
-        file_formatter = logging.Formatter(
-            "%(asctime)s %(levelname)-8s %(filename)s: %(message)s",
-            datefmt="%Y-%m-%d %H:%M:%S",
-        )
-        file_handler = logging.FileHandler("log.txt")
-        file_handler.setFormatter(file_formatter)
-        logger.addHandler(file_handler)
-
-    return logger
+from .logger import setup_logging
 
 
 @click.command()
