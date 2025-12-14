@@ -71,11 +71,10 @@ chmod +x .git/hooks/pre-commit
 
 ## Versioning
 
-Version is derived from git tags using `setuptools-scm`:
+Version is derived from git tags using `hatch-vcs` with `local_scheme = "no-local-version"`:
 - Clean tagged commit: `1.0.0`
-- Commits after tag: `1.0.0+abc1234`
-- Uncommitted changes: `1.0.0+abc1234.dirty`
-- No tag exists: `0.0.0+abc1234`
+- Commits after tag: `1.0.1.devN` (where N is commit count after tag)
+- No tag exists: `0.1.devN`
 
 Create a tag:
 ```bash
