@@ -13,7 +13,7 @@ def setup_logging(verbosity, save_log):
         level = logging.DEBUG
 
     formatter = colorlog.ColoredFormatter(
-        "%(log_color)s%(asctime)s %(levelname)-8s%(reset)s %(message)s",
+        "%(log_color)s%(asctime)s %(levelname)-8s%(reset)s %(filename)s: %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
         log_colors={
             "DEBUG": "cyan",
@@ -33,7 +33,7 @@ def setup_logging(verbosity, save_log):
 
     if save_log:
         file_formatter = logging.Formatter(
-            "%(asctime)s %(levelname)-8s %(message)s",
+            "%(asctime)s %(levelname)-8s %(filename)s: %(message)s",
             datefmt="%Y-%m-%d %H:%M:%S",
         )
         file_handler = logging.FileHandler("log.txt")
@@ -56,9 +56,10 @@ def setup_logging(verbosity, save_log):
 @click.version_option(package_name="myprogram")
 def cli(foobar, verbosity, save_log):
     logger = setup_logging(verbosity, save_log)
+    logger.debug("Debug logging enabled")
 
+    # Actual program logic goes here
+    logger.info("myprogram started")
     if foobar:
         print(foobar)
-
-    logger.info("myprogram started")
-    logger.debug("Debug logging enabled")
+    logger.info("myprogram finished")
