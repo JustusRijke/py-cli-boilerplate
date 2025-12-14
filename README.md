@@ -1,6 +1,6 @@
 # py-cli-boilerplate
 
-[![CI](https://github.com/JustusRijke/py-cli-boilerplate/actions/workflows/ci.yml/badge.svg)](https://github.com/JustusRijke/py-cli-boilerplate/actions/workflows/ci.yml)
+[![Build](https://github.com/JustusRijke/py-cli-boilerplate/actions/workflows/build.yml/badge.svg)](https://github.com/JustusRijke/py-cli-boilerplate/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/github/JustusRijke/py-cli-boilerplate/graph/badge.svg?token=PXD6VY28LO)](https://codecov.io/github/JustusRijke/py-cli-boilerplate)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
