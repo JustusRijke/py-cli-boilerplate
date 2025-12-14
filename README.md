@@ -5,7 +5,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-A minimal Python CLI boilerplate template.
+A minimal Python CLI boilerplate template for GitHub-hosted projects.
 
 ## Usage as Template
 
@@ -94,6 +94,12 @@ git tag v1.0.0
 ## Publishing
 
 This project includes a GitHub Actions workflow for publishing to PyPI. See the [pypa/gh-action-pypi-publish](https://github.com/pypa/gh-action-pypi-publish) documentation for configuration details.
+
+## Acknowledgements
+
+This template uses:
+- [Click](https://github.com/pallets/click) - For building CLI interfaces
+- [colorlog](https://github.com/bkabrda/colorlog) - For colored logging output
 
 ## License
 
