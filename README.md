@@ -9,10 +9,16 @@ A minimal Python CLI boilerplate template.
 
 ## Usage as Template
 
-1. Clone this repository
+1. Copy the contents of this repository
 2. Find and replace `myprogram` with your desired program name
 3. Rename `src/myprogram/` directory to match your program name
 4. Update [pyproject.toml](pyproject.toml) with your project details
+5. Update badge URLs in README.md with your repository information
+
+### Optional Setup
+
+- **Enable Dependabot**: Go to Settings > Code security and analysis > Dependabot to enable automatic dependency updates
+- **Enable Codecov**: Set up [Codecov](https://codecov.io) integration for code coverage tracking
 
 ## Installation
 
@@ -70,6 +76,8 @@ Install pre-commit hook (runs ruff automatically before commits):
 cp hooks/pre-commit .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
+
+The CI workflow in [.github/workflows/ci.yml](.github/workflows/ci.yml) automatically runs tests and code quality checks on every push.
 
 ## Versioning
 
