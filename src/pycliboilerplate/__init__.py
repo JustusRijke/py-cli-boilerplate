@@ -2,7 +2,7 @@ from importlib.metadata import version
 
 from .cli import cli
 
-__version__ = version("myprogram")
+__version__ = version("pycliboilerplate")
 
 
 def main(args=None):  # pragma: no cover

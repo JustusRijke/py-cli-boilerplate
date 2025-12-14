@@ -6,7 +6,7 @@ requires = [
 build-backend = "hatchling.build"
 
 [project]
-name = "myprogram"
+name = "pycliboilerplate"
 dynamic = ["version"]
 description = "A minimal Python CLI boilerplate template"
 readme = "README.md"
@@ -30,7 +30,7 @@ dev = [
 ]
 
 [project.scripts]
-myprogram = "myprogram:main"
+pycliboilerplate = "pycliboilerplate:main"
 
 [tool.hatch.version]
 source = "vcs"

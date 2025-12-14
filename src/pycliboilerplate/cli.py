@@ -13,13 +13,13 @@ from .logger import setup_logging
     help="Increase verbosity (-v for INFO, -vv for DEBUG)",
 )
 @click.option("--save-log", is_flag=True, help="Write log output to log.txt")
-@click.version_option(package_name="myprogram")
+@click.version_option(package_name="pycliboilerplate")
 def cli(foobar, verbosity, save_log):
     logger = setup_logging(verbosity, save_log)
     logger.debug("Debug logging enabled")
 
     # Actual program logic goes here
-    logger.info("myprogram started")
+    logger.info("pycliboilerplate started")
     if foobar:
         print(foobar)
-    logger.info("myprogram finished")
+    logger.info("pycliboilerplate finished")

@@ -10,10 +10,10 @@ A minimal Python CLI boilerplate template for GitHub-hosted projects.
 ## Usage as Template
 
 1. Copy the contents of this repository
-2. Find and replace `myprogram` with your desired program name
-3. Rename `src/myprogram/` directory to match your program name
-4. Update [pyproject.toml](pyproject.toml) with your project details
-5. Update badge URLs in README.md with your repository information
+1. Find and replace `pycliboilerplate` with your desired program name
+1. Rename `src/pycliboilerplate/` directory to match your program name
+1. Update [pyproject.toml](pyproject.toml) with your project details
+1. Update badge URLs in README.md with your repository information
 
 ### Optional Setup
 
@@ -35,7 +35,7 @@ pip install -e .[dev]
 ## CLI Usage
 
 ```bash
-myprogram [OPTIONS]
+pycliboilerplate [OPTIONS]
 ```
 
 Options:
@@ -47,14 +47,14 @@ Options:
 
 Example:
 ```bash
-myprogram --foobar "hello world" -vv --save-log
+pycliboilerplate --foobar "hello world" -vv --save-log
 ```
 
 ## Library Usage
 
 Call the CLI from Python:
 ```python
-from myprogram import main
+from pycliboilerplate import main
 main(["--foobar", "hello world"])
 ```
 
