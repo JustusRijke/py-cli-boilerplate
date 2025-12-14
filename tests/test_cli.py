@@ -24,3 +24,19 @@ def test_save_log_creates_file():
         result = runner.invoke(cli, ["--save-log"])
         assert result.exit_code == 0
         assert Path("log.txt").exists()
+
+
+def test_verbose_flag():
+    runner = CliRunner()
+    result = runner.invoke(cli, ["-v"])
+    assert result.exit_code == 0
+    assert "myprogram started" in result.output
+    assert "Debug logging enabled" not in result.output
+
+
+def test_double_verbose_flag():
+    runner = CliRunner()
+    result = runner.invoke(cli, ["-vv"])
+    assert result.exit_code == 0
+    assert "myprogram started" in result.output
+    assert "Debug logging enabled" in result.output

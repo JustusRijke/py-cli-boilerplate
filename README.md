@@ -40,14 +40,14 @@ myprogram [OPTIONS]
 
 Options:
 - `--foobar TEXT`: Example argument; prints value to stdout
-- `--debug`: Set log level to DEBUG (default: INFO)
+- `-v, --verbose`: Increase verbosity; use `-v` for INFO level (default: WARNING), `-vv` for DEBUG level
 - `--save-log`: Write log output to `log.txt` in current directory
 - `--version`: Show version and exit
 - `--help`: Show help and exit
 
 Example:
 ```bash
-myprogram --foobar "hello world" --debug --save-log
+myprogram --foobar "hello world" -vv --save-log
 ```
 
 ## Library Usage

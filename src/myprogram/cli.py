@@ -4,8 +4,13 @@ import click
 import colorlog
 
 
-def setup_logging(debug, save_log):
-    level = logging.DEBUG if debug else logging.INFO
+def setup_logging(verbosity, save_log):
+    if verbosity == 0:
+        level = logging.WARNING
+    elif verbosity == 1:
+        level = logging.INFO
+    else:
+        level = logging.DEBUG
 
     formatter = colorlog.ColoredFormatter(
         "%(log_color)s%(asctime)s %(levelname)-8s%(reset)s %(message)s",
@@ -40,14 +45,20 @@ def setup_logging(debug, save_log):
 
 @click.command()
 @click.option("--foobar", type=str, help="Example argument; prints value to stdout")
-@click.option("--debug", is_flag=True, help="Set log level to DEBUG")
+@click.option(
+    "-v",
+    "--verbose",
+    "verbosity",
+    count=True,
+    help="Increase verbosity (-v for INFO, -vv for DEBUG)",
+)
 @click.option("--save-log", is_flag=True, help="Write log output to log.txt")
 @click.version_option(package_name="myprogram")
-def cli(foobar, debug, save_log):
-    logger = setup_logging(debug, save_log)
+def cli(foobar, verbosity, save_log):
+    logger = setup_logging(verbosity, save_log)
 
     if foobar:
         print(foobar)
 
     logger.info("myprogram started")
-    logger.debug("Debug mode enabled")
+    logger.debug("Debug logging enabled")
