@@ -10,9 +10,16 @@ name = "pycliboilerplate"
 dynamic = ["version"]
 description = "A minimal Python CLI boilerplate template for GitHub-hosted projects."
 readme = "README.md"
-license = {text = "MIT"}
-authors = [{name = "Justus Rijke"}]
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Justus Rijke", email="justusrijke@gmail.com"}]
 requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Development Status :: 4 - Beta",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+]
 dependencies = [
     "click",
     "colorlog",
@@ -39,7 +46,7 @@ source = "vcs"
 local_scheme = "no-local-version"
 
 [tool.ruff]
-target-version = "py312"
+target-version = "py310"
 
 [tool.ruff.lint]
 extend-select = ["I"] # Sort imports
