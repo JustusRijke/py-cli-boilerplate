@@ -1,3 +1,5 @@
+import sys
+
 import click
 
 from .logger import setup_logging
@@ -25,6 +27,12 @@ def cli(ctx, foobar, verbosity, save_log):
 
     # Actual program logic goes here
     logger.info("pycliboilerplate started")
-    if foobar:
-        print(foobar)
+
+    try:
+        if foobar:
+            print(foobar)
+    except Exception as e:  # pragma: no cover
+        logger.critical(f"Error: {e}", exc_info=True)
+        sys.exit(2)
+
     logger.info("pycliboilerplate finished")
