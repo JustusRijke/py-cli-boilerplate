@@ -25,8 +25,8 @@ def cli(foobar, verbosity, save_log):
     logger.info("pycliboilerplate started")
 
     try:
-        if foobar:
-            print(foobar)
+        # Example logic, enclosed in try/except to demonstrate critical error logging
+        print(foobar)
     except Exception as e:  # pragma: no cover
         logger.critical(f"Error: {e}", exc_info=True)
         sys.exit(2)
