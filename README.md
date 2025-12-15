@@ -35,19 +35,27 @@ pip install -e .[dev]
 ## CLI Usage
 
 ```bash
-pycliboilerplate [OPTIONS]
-```
+$pycliboilerplate --help
+
+Usage: pycliboilerplate [OPTIONS] FOOBAR
+
+  FOOBAR is an example argument, it's value is printed to stdout
 
 Options:
-- `--foobar TEXT`: Example argument; prints value to stdout
-- `-v, --verbose`: Increase verbosity; use `-v` for INFO level (default: WARNING), `-vv` for DEBUG level
-- `--save-log`: Write log output to `log.txt` in current directory
-- `--version`: Show version and exit
-- `--help`: Show help and exit
+  -v, --verbose  Increase verbosity (-v for INFO, -vv for DEBUG)
+  --save-log     Write log output to log.txt
+  --version      Show the version and exit.
+  --help         Show this message and exit.
+```
 
 Example:
 ```bash
-pycliboilerplate --foobar "hello world" -vv --save-log
+$pycliboilerplate "hello world" -vv
+
+2025-12-15 14:14:32 DEBUG    cli.py:22 (cli): Debug logging enabled
+2025-12-15 14:14:32 INFO     cli.py:25 (cli): pycliboilerplate started
+hello world
+2025-12-15 14:14:32 INFO     cli.py:34 (cli): pycliboilerplate finished
 ```
 
 ## Library Usage
@@ -55,7 +63,7 @@ pycliboilerplate --foobar "hello world" -vv --save-log
 Call the CLI from Python:
 ```python
 from pycliboilerplate import main
-main(["--foobar", "hello world"])
+main(["-vv","hello world"])
 ```
 
 ## Development
