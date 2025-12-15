@@ -1,3 +1,4 @@
+import subprocess
 from pathlib import Path
 
 from click.testing import CliRunner
@@ -33,3 +34,13 @@ def test_double_verbose_flag():
     assert result.exit_code == 0
     assert "pycliboilerplate started" in result.output
     assert "Debug logging enabled" in result.output
+
+
+def test_cli_via_subprocess():
+    result = subprocess.run(
+        ["pycliboilerplate", "test_output"],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0
+    assert "test_output" in result.stdout

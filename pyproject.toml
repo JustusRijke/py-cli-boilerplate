@@ -37,7 +37,7 @@ dev = [
 ]
 
 [project.scripts]
-pycliboilerplate = "pycliboilerplate:main"
+pycliboilerplate = "pycliboilerplate:invoke"
 
 [tool.hatch.version]
 source = "vcs"
