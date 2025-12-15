@@ -34,7 +34,7 @@ pip install -e .[dev]
 
 ## CLI Usage
 
-```bash
+```
 $pycliboilerplate --help
 
 Usage: pycliboilerplate [OPTIONS] FOOBAR
@@ -60,10 +60,10 @@ hello world
 
 ## Library Usage
 
-Call the CLI from Python:
+Run from Python:
 ```python
-from pycliboilerplate import main
-main(["-vv","hello world"])
+from pycliboilerplate import invoke
+invoke(["-vv","hello world"])
 ```
 
 ## Development
