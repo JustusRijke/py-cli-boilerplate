@@ -9,7 +9,7 @@ A minimal Python CLI boilerplate template for GitHub-hosted projects.
 
 ## Usage as Template
 
-1. Copy the contents of this repository
+1. [Create a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template) directly using this template
 1. Find and replace `pycliboilerplate` with your desired program name
 1. Rename `src/pycliboilerplate/` directory to match your program name
 1. Update [pyproject.toml](pyproject.toml) with your project details
