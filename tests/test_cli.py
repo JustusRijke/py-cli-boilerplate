@@ -3,7 +3,7 @@ from pathlib import Path
 
 from click.testing import CliRunner
 
-from pycliboilerplate.cli import cli
+from py_cli_boilerplate.cli import cli
 
 
 def test_cli_runs_without_error() -> None:
@@ -24,7 +24,7 @@ def test_verbose_flag() -> None:
     runner = CliRunner()
     result = runner.invoke(cli, ["hello world", "-v"])
     assert result.exit_code == 0
-    assert "pycliboilerplate started" in result.output
+    assert "Program started" in result.output
     assert "Debug logging enabled" not in result.output
 
 
@@ -32,13 +32,13 @@ def test_double_verbose_flag() -> None:
     runner = CliRunner()
     result = runner.invoke(cli, ["hello world", "-vv"])
     assert result.exit_code == 0
-    assert "pycliboilerplate started" in result.output
+    assert "Program started" in result.output
     assert "Debug logging enabled" in result.output
 
 
 def test_cli_via_subprocess() -> None:
     result = subprocess.run(
-        ["pycliboilerplate", "test_output"],
+        ["py-cli-boilerplate", "test_output"],
         capture_output=True,
         text=True,
     )

@@ -12,8 +12,9 @@ An opinionated Python CLI boilerplate template for GitHub-hosted projects.
 ## Usage as Template
 
 1. [Create a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template) directly using this template
-1. Find and replace `pycliboilerplate` with your desired program name
-1. Rename `src/pycliboilerplate/` directory to match your program name
+1. Replace `py-cli-boilerplate` with your distribution name in all files
+1. Replace `py_cli_boilerplate` with your package name in all files (dashes not allowed in package names)
+1. Rename `src/py_cli_boilerplate/` directory to your package name
 1. Update [pyproject.toml](pyproject.toml) with your project details
 1. Update badge URLs in README.md with your repository information
 
@@ -38,9 +39,9 @@ pip install -e .[dev]
 ## CLI Usage
 
 ```
-$pycliboilerplate --help
+$py-cli-boilerplate --help
 
-Usage: pycliboilerplate [OPTIONS] FOOBAR
+Usage: py-cli-boilerplate [OPTIONS] FOOBAR
 
   FOOBAR is an example argument, it's value is printed to stdout
 
@@ -53,19 +54,19 @@ Options:
 
 Example:
 ```bash
-$pycliboilerplate "hello world" -vv
+$py-cli-boilerplate "hello world" -vv
 
 2025-12-15 14:14:32 DEBUG    cli.py:22 (cli): Debug logging enabled
-2025-12-15 14:14:32 INFO     cli.py:25 (cli): pycliboilerplate started
+2025-12-15 14:14:32 INFO     cli.py:25 (cli): Program started
 hello world
-2025-12-15 14:14:32 INFO     cli.py:34 (cli): pycliboilerplate finished
+2025-12-15 14:14:32 INFO     cli.py:34 (cli): Program finished
 ```
 
 ## Library Usage
 
 Run from Python:
 ```python
-from pycliboilerplate import invoke
+from py_cli_boilerplate import invoke
 invoke(["-vv","hello world"])
 ```
 

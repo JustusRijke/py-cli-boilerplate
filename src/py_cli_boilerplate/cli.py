@@ -22,7 +22,7 @@ def cli(foobar: str, verbosity: int, save_log: bool) -> None:
     logger.debug("Debug logging enabled")
 
     # Actual program logic goes here
-    logger.info("pycliboilerplate started")
+    logger.info("Program started")
 
     try:
         # Example logic, enclosed in try/except to demonstrate critical error logging
@@ -31,4 +31,4 @@ def cli(foobar: str, verbosity: int, save_log: bool) -> None:
         logger.critical(f"Error: {e}", exc_info=True)
         sys.exit(2)
 
-    logger.info("pycliboilerplate finished")
+    logger.info("Program finished")

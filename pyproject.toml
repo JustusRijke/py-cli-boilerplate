@@ -38,10 +38,10 @@ dev = [
 ]
 
 [project.scripts]
-pycliboilerplate = "pycliboilerplate:invoke"
+py-cli-boilerplate = "py_cli_boilerplate:invoke"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/pycliboilerplate"]
+packages = ["src/py_cli_boilerplate"]
 
 [tool.hatch.version]
 source = "vcs"
