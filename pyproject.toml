@@ -23,7 +23,6 @@ classifiers = [
 ]
 dependencies = [
     "click",
-    "colorlog",
 ]
 
 [project.urls]

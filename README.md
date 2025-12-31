@@ -125,7 +125,6 @@ To publish on [pypi.org](https://pypi.org/), remove the `repository-url` line fr
 
 This template uses:
 - [Click](https://github.com/pallets/click) - For building CLI interfaces
-- [colorlog](https://github.com/bkabrda/colorlog) - For colored logging output
 - [mypy](https://github.com/python/mypy) - For static type checking
 
 ## License
