@@ -1,10 +1,12 @@
 # py-cli-boilerplate
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Build](https://github.com/JustusRijke/py-cli-boilerplate/actions/workflows/build.yml/badge.svg)](https://github.com/JustusRijke/py-cli-boilerplate/actions/workflows/build.yml)
 [![codecov](https://codecov.io/github/JustusRijke/py-cli-boilerplate/graph/badge.svg?token=PXD6VY28LO)](https://codecov.io/github/JustusRijke/py-cli-boilerplate)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![PyPI - Types](https://img.shields.io/pypi/types/py-cli-boilerplate?pypiBaseUrl=https%3A%2F%2Ftest.pypi.org)
 [![PyPI - Version](https://img.shields.io/pypi/v/py-cli-boilerplate?pypiBaseUrl=https%3A%2F%2Ftest.pypi.org)](https://test.pypi.org/project/py-cli-boilerplate/)
+[![GitHub Release Date](https://img.shields.io/github/release-date/JustusRijke/py-cli-boilerplate)](https://github.com/JustusRijke/py-cli-boilerplate/releases)
 
 
 An opinionated Python CLI boilerplate template for GitHub-hosted projects.
@@ -16,7 +18,7 @@ An opinionated Python CLI boilerplate template for GitHub-hosted projects.
 1. Replace `py_cli_boilerplate` with your package name in all files (dashes not allowed in package names)
 1. Rename `src/py_cli_boilerplate/` directory to your package name
 1. Update [pyproject.toml](pyproject.toml) with your project details
-1. Update badge URLs in README.md with your repository information
+1. Update badge URLs in README.md with your repository URL
 
 ### Optional Setup
 
