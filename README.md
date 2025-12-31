@@ -4,8 +4,10 @@
 [![codecov](https://codecov.io/github/JustusRijke/py-cli-boilerplate/graph/badge.svg?token=PXD6VY28LO)](https://codecov.io/github/JustusRijke/py-cli-boilerplate)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![PyPI - Version](https://img.shields.io/pypi/v/py-cli-boilerplate?pypiBaseUrl=https%3A%2F%2Ftest.pypi.org)](https://test.pypi.org/project/py-cli-boilerplate/)
 
-A minimal Python CLI boilerplate template for GitHub-hosted projects.
+
+An opinionated Python CLI boilerplate template for GitHub-hosted projects.
 
 ## Usage as Template
 
@@ -19,12 +21,13 @@ A minimal Python CLI boilerplate template for GitHub-hosted projects.
 
 - **Enable Dependabot**: Go to Settings > Code security and analysis > Dependabot to enable automatic dependency updates
 - **Enable Codecov**: Set up [Codecov](https://codecov.io) integration for code coverage tracking
+- **Publishing on PyPI**: See [Publishing](#publishing)
 
 ## Installation
 
-Install the package:
+Install the package ([editable](https://setuptools.pypa.io/en/latest/userguide/development_mode.html)):
 ```bash
-pip install .
+pip install -e .
 ```
 
 Install with dev dependencies (pytest, ruff, mypy):
@@ -102,7 +105,18 @@ git tag v1.0.0
 
 ## Publishing
 
-This project includes a GitHub Actions workflow for publishing to PyPI. See the [pypa/gh-action-pypi-publish](https://github.com/pypa/gh-action-pypi-publish) documentation for configuration details.
+This project includes a [GitHub Actions workflow](https://github.com/JustusRijke/py-cli-boilerplate/blob/main/.github/workflows/pypi-publish.yml) that uses [pypa/gh-action-pypi-publish](https://github.com/pypa/gh-action-pypi-publish) for publishing to [test.pypi.org](https://test.pypi.org/) (the Test Python Package Index).
+
+To publish:
+
+1. Create an account on [test.pypi.org](https://test.pypi.org/)
+1. Add the project to the list of [trusted publishers](https://test.pypi.org/manage/account/publishing/)
+1. [Create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release) on GitHub
+
+Creating a release triggers the workflow ([pypi-publish.yml](https://github.com/JustusRijke/py-cli-boilerplate/blob/main/.github/workflows/pypi-publish.yml)).
+
+Remove line `repository-url: https://test.pypi.org/legacy/` from [pypi-publish.yml](https://github.com/JustusRijke/py-cli-boilerplate/blob/main/.github/workflows/pypi-publish.yml) to publish on [pypi.org](https://pypi.org/).
+
 
 ## Acknowledgements
 
