@@ -6,9 +6,9 @@ requires = [
 build-backend = "hatchling.build"
 
 [project]
-name = "pycliboilerplate"
+name = "py-cli-boilerplate"
 dynamic = ["version"]
-description = "A minimal Python CLI boilerplate template for GitHub-hosted projects."
+description = "An opinionated Python CLI boilerplate template for GitHub-hosted projects."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
