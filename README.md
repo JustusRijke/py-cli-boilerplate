@@ -116,7 +116,7 @@ To publish:
 
 Creating a release triggers the workflow ([pypi-publish.yml](https://github.com/JustusRijke/py-cli-boilerplate/blob/main/.github/workflows/pypi-publish.yml)).
 
-Remove line `repository-url: https://test.pypi.org/legacy/` from [pypi-publish.yml](https://github.com/JustusRijke/py-cli-boilerplate/blob/main/.github/workflows/pypi-publish.yml) to publish on [pypi.org](https://pypi.org/).
+To publish on [pypi.org](https://pypi.org/), remove the `repository-url` line from [pypi-publish.yml](https://github.com/JustusRijke/py-cli-boilerplate/blob/main/.github/workflows/pypi-publish.yml) and remove `pypiBaseUrl` from the PyPI badge url in `README.md`. 
 
 
 ## Acknowledgements
