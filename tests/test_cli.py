@@ -6,13 +6,13 @@ from click.testing import CliRunner
 from pycliboilerplate.cli import cli
 
 
-def test_cli_runs_without_error():
+def test_cli_runs_without_error() -> None:
     runner = CliRunner()
     result = runner.invoke(cli, ["hello world"])
     assert result.exit_code == 0
 
 
-def test_save_log_creates_file():
+def test_save_log_creates_file() -> None:
     runner = CliRunner()
     with runner.isolated_filesystem():
         result = runner.invoke(cli, ["hello world", "--save-log"])
@@ -20,7 +20,7 @@ def test_save_log_creates_file():
         assert Path("log.txt").exists()
 
 
-def test_verbose_flag():
+def test_verbose_flag() -> None:
     runner = CliRunner()
     result = runner.invoke(cli, ["hello world", "-v"])
     assert result.exit_code == 0
@@ -28,7 +28,7 @@ def test_verbose_flag():
     assert "Debug logging enabled" not in result.output
 
 
-def test_double_verbose_flag():
+def test_double_verbose_flag() -> None:
     runner = CliRunner()
     result = runner.invoke(cli, ["hello world", "-vv"])
     assert result.exit_code == 0
@@ -36,7 +36,7 @@ def test_double_verbose_flag():
     assert "Debug logging enabled" in result.output
 
 
-def test_cli_via_subprocess():
+def test_cli_via_subprocess() -> None:
     result = subprocess.run(
         ["pycliboilerplate", "test_output"],
         capture_output=True,

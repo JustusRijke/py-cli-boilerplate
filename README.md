@@ -27,7 +27,7 @@ Install the package:
 pip install .
 ```
 
-Install with dev dependencies (pytest, ruff):
+Install with dev dependencies (pytest, ruff, mypy):
 ```bash
 pip install -e .[dev]
 ```
@@ -77,9 +77,10 @@ Check code quality:
 ```bash
 ruff check
 ruff format --check
+mypy --strict .
 ```
 
-Install pre-commit hook (runs ruff automatically before commits):
+Install pre-commit hook (runs ruff and mypy automatically before commits):
 ```bash
 cp hooks/pre-commit .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
@@ -108,6 +109,7 @@ This project includes a GitHub Actions workflow for publishing to PyPI. See the 
 This template uses:
 - [Click](https://github.com/pallets/click) - For building CLI interfaces
 - [colorlog](https://github.com/bkabrda/colorlog) - For colored logging output
+- [mypy](https://github.com/python/mypy) - For static type checking
 
 ## License
 
