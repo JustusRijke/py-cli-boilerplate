@@ -40,6 +40,9 @@ dev = [
 [project.scripts]
 pycliboilerplate = "pycliboilerplate:invoke"
 
+[tool.hatch.build.targets.wheel]
+packages = ["src/pycliboilerplate"]
+
 [tool.hatch.version]
 source = "vcs"
 

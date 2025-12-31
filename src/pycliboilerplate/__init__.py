@@ -3,7 +3,7 @@ from typing import Optional
 
 from .cli import cli
 
-__version__ = version("pycliboilerplate")
+__version__ = version("py-cli-boilerplate")
 
 
 def invoke(args: Optional[list[str]] = None) -> None:  # pragma: no cover
