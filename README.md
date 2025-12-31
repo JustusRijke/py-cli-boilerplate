@@ -101,10 +101,8 @@ Version is derived from git tags using `hatch-vcs` with `local_scheme = "no-loca
 - Commits after tag: `1.0.1.devN` (where N is commit count after tag)
 - No tag exists: `0.1.devN`
 
-Create a tag:
-```bash
-git tag v1.0.0
-```
+Create a tag via GitHub releases (see [Publishing](#publishing)) or manually using `git tag`.
+
 
 ## Publishing
 
