@@ -36,8 +36,8 @@ jobs:
         run: mypy .
 
       - name: Run pytest
-        run: pytest tests/ -v --cov --cov-branch --cov-report=xml
-
+        run: pytest .
+        
       - name: Upload coverage reports to Codecov
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.10'
         uses: codecov/codecov-action@v5

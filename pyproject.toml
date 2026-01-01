@@ -49,6 +49,10 @@ source = "vcs"
 [tool.hatch.version.raw-options]
 local_scheme = "no-local-version"
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --cov --cov-branch --cov-report=term-missing --cov-report=html --cov-report=xml"
+
 [tool.ruff]
 target-version = "py310"
 
