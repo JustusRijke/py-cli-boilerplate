@@ -40,6 +40,9 @@ dev = [
 [project.scripts]
 py-cli-boilerplate = "py_cli_boilerplate:invoke"
 
+[tool.coverage.run]
+omit = ["tests/*"]
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/py_cli_boilerplate"]
 
