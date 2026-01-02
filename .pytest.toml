@@ -1,0 +1,10 @@
+[pytest]
+testpaths = ["tests"]
+addopts = [
+    "-v", # Verbose output
+    "-W error", # Treat warnings as errors (e.g., deprecation warnings)
+    "--cov", # Enable coverage 
+    "--cov-branch", # Make sure to cover every decision branch
+    "--cov-report=term-missing", # Report which lines aren't covered
+    "--cov-report=xml", # Dump to XML for Codecov
+]
