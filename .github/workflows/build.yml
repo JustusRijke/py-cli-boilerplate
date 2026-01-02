@@ -16,7 +16,7 @@ jobs:
         # - The highest versions of the dependencies & Python defined in pyproject.toml
         # - on both Windows & Ubuntu
         # Note: Windows is slow, remove if not required
-        os: [ubuntu-latest] #, windows-latest]
+        os: [ubuntu-latest, windows-latest]
         resolution: [lowest, highest]
 
     steps:
