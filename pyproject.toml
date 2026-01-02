@@ -22,19 +22,19 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
-    "click",
+    "click>=8.1",
 ]
 
 [project.urls]
 Homepage = "https://github.com/JustusRijke/py-cli-boilerplate"
 Issues = "https://github.com/JustusRijke/py-cli-boilerplate/issues"
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
-    "pytest",
-    "pytest-cov",
-    "ruff",
-    "mypy",
+    "pytest>=9",
+    "pytest-cov>=6",
+    "ruff>=0.10",
+    "mypy>=1.0.0",
 ]
 
 [project.scripts]
