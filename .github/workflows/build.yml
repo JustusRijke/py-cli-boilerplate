@@ -22,11 +22,11 @@ jobs:
       - name: Install the latest version of uv and set the python version
         uses: astral-sh/setup-uv@v7
         with:
+          version: "latest"
           python-version: ${{ matrix.python-version }}
-          resolution-strategy: ${{ matrix.resolution }}
 
       - name: Install packages
-        run: uv sync --group dev
+        run: uv sync --group dev --resolution ${{ matrix.resolution }}
 
       - name: Run ruff (check)
         run: uv run ruff check
