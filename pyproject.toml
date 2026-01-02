@@ -34,7 +34,7 @@ dev = [
     "pytest>=9",
     "pytest-cov>=6",
     "ruff>=0.10",
-    "mypy>=1.1", # Will fail on lowest version; should be:  "mypy>=1.18.1"
+    "mypy>=1.0.0",
 ]
 
 [project.scripts]
