@@ -17,7 +17,7 @@ from .logger import setup_logging
 @click.option("--save-log", is_flag=True, help="Write log output to log.txt")
 @click.version_option(package_name="py-cli-boilerplate")
 def cli(foobar: str, verbosity: int, save_log: bool) -> None:
-    """FOOBAR is an example argument, it's value is printed to stdout"""
+    """FOOBAR is an example argument, its value is printed to stdout"""
     logger = setup_logging(verbosity, save_log)
     logger.debug("Debug logging enabled")
 

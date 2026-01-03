@@ -27,16 +27,35 @@ An opinionated Python CLI boilerplate template for GitHub-hosted projects.
 - **Publishing on PyPI**: See [Publishing](#publishing)
 - **Typed Project**: This template is configured as a typed project with the `py.typed` marker, `Typing :: Typed` classifier in pyproject.toml, and strict mypy configuration. If your project won't provide type hints, remove `src/py_cli_boilerplate/py.typed` and the typing classifier from pyproject.toml
 
-## Installation
+## Installation (End Users)
 
-Install the package ([editable](https://setuptools.pypa.io/en/latest/userguide/development_mode.html)):
+### Using uv (preferred method)
+
+[uv](https://github.com/astral-sh/uv?tab=readme-ov-file#installation) automatically handles Python installation and setup in the background so you don't have to.
+
+If your package is available on PyPI, the user can simply run the program using uvx:
+
 ```bash
-pip install -e .
+uvx py-cli-boilerplate
 ```
 
-Install with dev dependencies (pytest, ruff, mypy):
+### Using pip
+
+Make sure [Python](https://www.python.org/downloads/) v3.10 or higher is installed.
+
+Create a virtual environment (optional):
 ```bash
-pip install -e .[dev]
+python -m venv .venv
+source .venv/bin/activate
+```
+
+Install the package:
+```bash
+pip install py-cli-boilerplate
+```
+Or, if the package is not (yet) available on PyPI, clone the repo and:
+```bash
+pip install .
 ```
 
 ## CLI Usage
@@ -46,7 +65,7 @@ $py-cli-boilerplate --help
 
 Usage: py-cli-boilerplate [OPTIONS] FOOBAR
 
-  FOOBAR is an example argument, it's value is printed to stdout
+  FOOBAR is an example argument, its value is printed to stdout
 
 Options:
   -v, --verbose  Increase verbosity (-v for INFO, -vv for DEBUG)
@@ -70,24 +89,43 @@ hello world
 Run from Python:
 ```python
 from py_cli_boilerplate import invoke
-invoke(["-vv","hello world"])
+invoke(["-vv", "hello world"])
 ```
 
-## Development
+## Installation (Developers)
 
-Run tests:
+### Using uv (preferred method)
+
+No Python installation required. Just install the package & activate the automatically generated virtual environment:
+
 ```bash
-pytest tests/
+uv sync
+source .venv/bin/activate
 ```
 
-Check code quality:
+### Using pip
+
+Install Python, then install the package ([editable](https://setuptools.pypa.io/en/latest/userguide/development_mode.html)) including dev dependencies (pytest, ruff, etc.):
+```bash
+pip install -e .[dev]
+```
+
+### Testing
+Run tests (settings: [.pytest.toml](.pytest.toml) & [.coveragerc](.coveragerc)):
+```bash
+pytest
+```
+
+### Quality Assurance (QA)
+
+Check code quality (settings: [.ruff.toml](.ruff.toml) & [mypy.ini](mypy.ini)):
 ```bash
 ruff check
 ruff format --check
-mypy --strict .
+mypy .
 ```
 
-Install pre-commit hook (runs ruff and mypy automatically before commits):
+Better yet, install the [pre-commit](.git/hooks/pre-commit) hook, which runs code quality checks before every commit:
 ```bash
 cp hooks/pre-commit .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
@@ -117,7 +155,7 @@ To publish:
 
 Creating a release triggers the workflow ([pypi-publish.yml](https://github.com/JustusRijke/py-cli-boilerplate/blob/main/.github/workflows/pypi-publish.yml)).
 
-To publish on [pypi.org](https://pypi.org/), remove the `repository-url` line from [pypi-publish.yml](https://github.com/JustusRijke/py-cli-boilerplate/blob/main/.github/workflows/pypi-publish.yml) and remove `pypiBaseUrl` from the PyPI badge url in `README.md`. 
+To publish on [pypi.org](https://pypi.org/) instead of test.pypi.org, remove the `repository-url` line from [pypi-publish.yml](https://github.com/JustusRijke/py-cli-boilerplate/blob/main/.github/workflows/pypi-publish.yml) and remove `pypiBaseUrl` from the PyPI badge url in `README.md`. 
 
 
 ## Acknowledgements
