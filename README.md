@@ -25,7 +25,7 @@ An opinionated Python CLI boilerplate template for GitHub-hosted projects.
 - **Enable Dependabot**: Go to Settings > Code security and analysis > Dependabot to enable automatic dependency updates
 - **Enable Codecov**: Set up [Codecov](https://codecov.io) integration for code coverage tracking
 - **Publishing on PyPI**: See [Publishing](#publishing)
-- **Typed Project**: This template is configured as a typed project with the `py.typed` marker, `Typing :: Typed` classifier in pyproject.toml, and strict mypy configuration. If your project won't provide type hints, remove `src/py_cli_boilerplate/py.typed` and the typing classifier from pyproject.toml
+- **Typed Project**: This template is configured as a typed project with the `py.typed` marker and `Typing :: Typed` classifier in [pyproject.toml](pyproject.toml). If your project won't provide type hints, remove `src/py_cli_boilerplate/py.typed` and the typing classifier from pyproject.toml
 
 ## Installation (End Users)
 
@@ -118,11 +118,11 @@ pytest
 
 ### Quality Assurance (QA)
 
-Check code quality (settings: [.ruff.toml](.ruff.toml) & [mypy.ini](mypy.ini)):
+Check code quality (settings: [.ruff.toml](.ruff.toml) & [ty.toml](ty.toml)):
 ```bash
 ruff check
 ruff format --check
-mypy .
+ty check
 ```
 
 Better yet, install the [pre-commit](.git/hooks/pre-commit) hook, which runs code quality checks before every commit:
@@ -162,7 +162,6 @@ To publish on [pypi.org](https://pypi.org/) instead of test.pypi.org, remove the
 
 This template uses:
 - [Click](https://github.com/pallets/click) - For building CLI interfaces
-- [mypy](https://github.com/python/mypy) - For static type checking
 
 ## License
 

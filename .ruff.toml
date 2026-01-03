@@ -1,5 +1,12 @@
-# More info on available rulesets: https://docs.astral.sh/ruff/rules/
+# More information: https://docs.astral.sh/ruff/configuration/
+
 [lint]
 extend-select = [
     "I", # Sort imports
+    "ANN", # Enforce type annotations
+    # Available rulesets: https://docs.astral.sh/ruff/rules/
 ]
+
+# Do not enforce type annotations for tests
+[lint.per-file-ignores]
+"tests/**" = ["ANN"]
