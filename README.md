@@ -18,7 +18,7 @@ An opinionated Python CLI boilerplate template for GitHub-hosted projects.
 1. Replace `py_cli_boilerplate` with your package name in all files (dashes not allowed in package names)
 1. Rename `src/py_cli_boilerplate/` directory to your package name
 1. Update [pyproject.toml](pyproject.toml) with your project details
-1. Update badge URLs in README.md with your repository URL
+1. Update badge URLs in `README.md` with your repository URL
 
 ### Optional Setup
 
@@ -96,7 +96,7 @@ invoke(["-vv", "hello world"])
 
 ### Using uv (preferred method)
 
-No Python installation required. Just install the package & activate the automatically generated virtual environment:
+No Python installation required. Just install dependencies & activate the automatically generated virtual environment:
 
 ```bash
 uv sync
@@ -131,7 +131,7 @@ cp hooks/pre-commit .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
 
-The CI workflow in [.github/workflows/ci.yml](.github/workflows/ci.yml) automatically runs tests and code quality checks on every push.
+The CI build workflow ([.github/workflows/build.yml](.github/workflows/build.yml)) automatically runs tests and code quality checks on every push.
 
 ## Versioning
 
