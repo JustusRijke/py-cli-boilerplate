@@ -92,23 +92,18 @@ from py_cli_boilerplate import invoke
 invoke(["-vv", "hello world"])
 ```
 
-## Installation (Developers)
+## Development
 
-### Using uv (preferred method)
+### Installation
 
-No Python installation required. Just install dependencies & activate the automatically generated virtual environment:
+Install [uv](https://github.com/astral-sh/uv?tab=readme-ov-file#installation). Then, install dependencies & activate the automatically generated virtual environment:
 
 ```bash
-uv sync
+uv sync --locked
 source .venv/bin/activate
 ```
 
-### Using pip
-
-Install Python, then install the package ([editable](https://setuptools.pypa.io/en/latest/userguide/development_mode.html)) including dev dependencies (pytest, ruff, etc.):
-```bash
-pip install -e .[dev]
-```
+Skip `--locked` to use the newest dependencies (this might modify `uv.lock`)
 
 ### Testing
 Run tests:
@@ -133,7 +128,7 @@ chmod +x .git/hooks/pre-commit
 
 The CI build workflow ([.github/workflows/build.yml](.github/workflows/build.yml)) automatically runs tests and code quality checks on every push.
 
-## Versioning
+### Versioning
 
 Version is derived from git tags using `hatch-vcs` with `local_scheme = "no-local-version"`:
 - Clean tagged commit: `1.0.0`
@@ -143,7 +138,7 @@ Version is derived from git tags using `hatch-vcs` with `local_scheme = "no-loca
 Create a tag via a GitHub release (see [Publishing](#publishing)) or manually using `git tag`.
 
 
-## Publishing
+### Publishing
 
 This project includes a GitHub Actions workflow ([pypi-publish.yml](.github/workflows/pypi-publish.yml)) that uses [pypa/gh-action-pypi-publish](https://github.com/pypa/gh-action-pypi-publish) for publishing to [test.pypi.org](https://test.pypi.org/) (the Test Python Package Index).
 
