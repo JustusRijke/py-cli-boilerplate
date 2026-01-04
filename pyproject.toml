@@ -49,12 +49,13 @@ source = "vcs"
 [tool.hatch.version.raw-options]
 local_scheme = "no-local-version"
 
-# Pytest configuration. More info: https://docs.pytest.org/en/stable/reference/customize.html
-[pytest]
+# Pytest configuration. More info: https://docs.pytest.org/en/stable/reference/reference.html#ini-options-ref
+[tool.pytest]
+strict = true
 testpaths = ["tests"]
+filterwarnings = ["error"] # Treat all warnings as errors (e.g., deprecation warnings)
 addopts = [
     "-v", # Verbose output
-    "-W error", # Treat warnings as errors (e.g., deprecation warnings)
     "--cov", # Enable coverage 
     "--cov-branch", # Make sure to cover every decision branch
     "--cov-report=term-missing", # Report which lines aren't covered
@@ -66,6 +67,7 @@ addopts = [
 extend-select = [
     "I", # Sort imports
     "ANN", # Enforce type annotations
+    "PT", # Common style issues or inconsistencies with pytest-based tests
     # Available rulesets: https://docs.astral.sh/ruff/rules/
 ]
 
