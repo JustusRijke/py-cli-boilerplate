@@ -111,14 +111,14 @@ pip install -e .[dev]
 ```
 
 ### Testing
-Run tests (settings: [.pytest.toml](.pytest.toml) & [.coveragerc](.coveragerc)):
+Run tests:
 ```bash
 pytest
 ```
 
 ### Quality Assurance (QA)
 
-Check code quality (settings: [.ruff.toml](.ruff.toml) & [ty.toml](ty.toml)):
+Check code quality:
 ```bash
 ruff check
 ruff format --check
@@ -140,22 +140,20 @@ Version is derived from git tags using `hatch-vcs` with `local_scheme = "no-loca
 - Commits after tag: `1.0.1.devN` (where N is commit count after tag)
 - No tag exists: `0.1.devN`
 
-Create a tag via GitHub releases (see [Publishing](#publishing)) or manually using `git tag`.
+Create a tag via a GitHub release (see [Publishing](#publishing)) or manually using `git tag`.
 
 
 ## Publishing
 
-This project includes a [GitHub Actions workflow](https://github.com/JustusRijke/py-cli-boilerplate/blob/main/.github/workflows/pypi-publish.yml) that uses [pypa/gh-action-pypi-publish](https://github.com/pypa/gh-action-pypi-publish) for publishing to [test.pypi.org](https://test.pypi.org/) (the Test Python Package Index).
+This project includes a GitHub Actions workflow ([pypi-publish.yml](.github/workflows/pypi-publish.yml)) that uses [pypa/gh-action-pypi-publish](https://github.com/pypa/gh-action-pypi-publish) for publishing to [test.pypi.org](https://test.pypi.org/) (the Test Python Package Index).
 
 To publish:
 
-1. Create an account on [test.pypi.org](https://test.pypi.org/)
-1. Add the project to the list of [trusted publishers](https://test.pypi.org/manage/account/publishing/)
-1. [Create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release) on GitHub
+1. Create an account on [test.pypi.org](https://test.pypi.org/).
+1. Add the project to the list of [trusted publishers](https://test.pypi.org/manage/account/publishing/).
+1. [Create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release) on GitHub. This triggers the workflow.
 
-Creating a release triggers the workflow ([pypi-publish.yml](https://github.com/JustusRijke/py-cli-boilerplate/blob/main/.github/workflows/pypi-publish.yml)).
-
-To publish on [pypi.org](https://pypi.org/) instead of test.pypi.org, remove the `repository-url` line from [pypi-publish.yml](https://github.com/JustusRijke/py-cli-boilerplate/blob/main/.github/workflows/pypi-publish.yml) and remove `pypiBaseUrl` from the PyPI badge url in `README.md`. 
+To publish on [pypi.org](https://pypi.org/) instead of test.pypi.org, remove the `repository-url` line from [pypi-publish.yml](.github/workflows/pypi-publish.yml) and remove `pypiBaseUrl` from the PyPI badge url in `README.md`. 
 
 
 ## Acknowledgements

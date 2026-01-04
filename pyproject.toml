@@ -48,3 +48,29 @@ source = "vcs"
 
 [tool.hatch.version.raw-options]
 local_scheme = "no-local-version"
+
+# Pytest configuration. More info: https://docs.pytest.org/en/stable/reference/customize.html
+[pytest]
+testpaths = ["tests"]
+addopts = [
+    "-v", # Verbose output
+    "-W error", # Treat warnings as errors (e.g., deprecation warnings)
+    "--cov", # Enable coverage 
+    "--cov-branch", # Make sure to cover every decision branch
+    "--cov-report=term-missing", # Report which lines aren't covered
+    "--cov-report=xml", # Dump to XML for Codecov
+]
+
+# Ruff configuration. More info: https://docs.astral.sh/ruff/configuration/
+[tool.ruff.lint]
+extend-select = [
+    "I", # Sort imports
+    "ANN", # Enforce type annotations
+    # Available rulesets: https://docs.astral.sh/ruff/rules/
+]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true # Combines "as" imports on the same line
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["ANN"] # Do not enforce type annotations for tests
