@@ -1,0 +1,35 @@
+default_language_version:
+  python: python3.10
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-illegal-windows-names
+      - id: check-merge-conflict
+      - id: detect-private-key
+      - id: end-of-file-fixer
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.11
+    hooks:
+      - id: ruff
+        args: [--fix, -q]
+      - id: ruff-format
+        args: [-q]
+
+  - repo: local
+    hooks:
+      - id: uv-sync-check
+        name: check uv is synced
+        entry: uv lock --check -q
+        language: system
+        pass_filenames: false
+
+      - id: ty
+        name: type check
+        entry: uv run ty check -q
+        language: system
+        pass_filenames: false

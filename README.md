@@ -120,10 +120,14 @@ ruff format --check
 ty check
 ```
 
-Better yet, install the [pre-commit](.git/hooks/pre-commit) hook, which runs code quality checks before every commit:
+Automatically run code quality checks before every commit using [pre-commit](https://pre-commit.com/):
 ```bash
-cp hooks/pre-commit .git/hooks/pre-commit
-chmod +x .git/hooks/pre-commit
+pre-commit install
+```
+
+This installs git hooks that run ruff, type checks, and other checks before each commit. You can run manually at any time with:
+```bash
+pre-commit run --all-files
 ```
 
 The CI build workflow ([.github/workflows/build.yml](.github/workflows/build.yml)) automatically runs tests and code quality checks on every push.
@@ -148,7 +152,7 @@ To publish:
 1. Add the project to the list of [trusted publishers](https://test.pypi.org/manage/account/publishing/).
 1. [Create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release) on GitHub. This triggers the workflow.
 
-To publish on [pypi.org](https://pypi.org/) instead of test.pypi.org, remove the `repository-url` line from [pypi-publish.yml](.github/workflows/pypi-publish.yml) and remove `pypiBaseUrl` from the PyPI badge url in `README.md`. 
+To publish on [pypi.org](https://pypi.org/) instead of test.pypi.org, remove the `repository-url` line from [pypi-publish.yml](.github/workflows/pypi-publish.yml) and remove `pypiBaseUrl` from the PyPI badge url in `README.md`.
 
 
 ## Acknowledgements
