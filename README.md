@@ -8,7 +8,6 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/py-cli-boilerplate?pypiBaseUrl=https%3A%2F%2Ftest.pypi.org)](https://test.pypi.org/project/py-cli-boilerplate/)
 [![GitHub Release Date](https://img.shields.io/github/release-date/JustusRijke/py-cli-boilerplate)](https://github.com/JustusRijke/py-cli-boilerplate/releases)
 
-
 An opinionated Python CLI boilerplate template for GitHub-hosted projects.
 
 ## Usage as Template
@@ -44,23 +43,27 @@ uvx py-cli-boilerplate
 Make sure [Python](https://www.python.org/downloads/) v3.10 or higher is installed.
 
 Create a virtual environment (optional):
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 ```
 
 Install the package:
+
 ```bash
 pip install py-cli-boilerplate
 ```
+
 Or, if the package is not (yet) available on PyPI, clone the repo and:
+
 ```bash
 pip install .
 ```
 
 ## CLI Usage
 
-```
+```bash
 $py-cli-boilerplate --help
 
 Usage: py-cli-boilerplate [OPTIONS] FOOBAR
@@ -75,6 +78,7 @@ Options:
 ```
 
 Example:
+
 ```bash
 $py-cli-boilerplate "hello world" -vv
 
@@ -87,6 +91,7 @@ hello world
 ## Library Usage
 
 Run from Python:
+
 ```python
 from py_cli_boilerplate import invoke
 invoke(["-vv", "hello world"])
@@ -106,26 +111,23 @@ source .venv/bin/activate
 Skip `--locked` to use the newest dependencies (this might modify `uv.lock`)
 
 ### Testing
+
 Run tests:
+
 ```bash
 pytest
 ```
 
 ### Quality Assurance (QA)
 
-Check code quality:
-```bash
-ruff check
-ruff format --check
-ty check
-```
-
 Automatically run code quality checks before every commit using [pre-commit](https://pre-commit.com/):
+
 ```bash
 pre-commit install
 ```
 
 This installs git hooks that run ruff, type checks, and other checks before each commit. You can run manually at any time with:
+
 ```bash
 pre-commit run --all-files
 ```
@@ -135,12 +137,12 @@ The CI build workflow ([.github/workflows/build.yml](.github/workflows/build.yml
 ### Versioning
 
 Version is derived from git tags using `hatch-vcs` with `local_scheme = "no-local-version"`:
+
 - Clean tagged commit: `1.0.0`
 - Commits after tag: `1.0.1.devN` (where N is commit count after tag)
 - No tag exists: `0.1.devN`
 
 Create a tag via a GitHub release (see [Publishing](#publishing)) or manually using `git tag`.
-
 
 ### Publishing
 
@@ -154,10 +156,10 @@ To publish:
 
 To publish on [pypi.org](https://pypi.org/) instead of test.pypi.org, remove the `repository-url` line from [pypi-publish.yml](.github/workflows/pypi-publish.yml) and remove `pypiBaseUrl` from the PyPI badge url in `README.md`.
 
-
 ## Acknowledgements
 
 This template uses:
+
 - [Click](https://github.com/pallets/click) - For building CLI interfaces
 
 ## License
