@@ -16,7 +16,7 @@ jobs:
         dependencies: [locked, oldest, newest]
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       # At the time of writing there is no way to force uv select the lowest version of Python.
       # Therefore, extract this from pyproject.toml
