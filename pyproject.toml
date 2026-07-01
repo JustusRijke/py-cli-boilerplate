@@ -22,7 +22,7 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
-    "click>=8.4.1",
+    "click>=8.4.2",
 ]
 
 [project.urls]
