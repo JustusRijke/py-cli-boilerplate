@@ -31,7 +31,7 @@ Issues = "https://github.com/JustusRijke/py-cli-boilerplate/issues"
 
 [dependency-groups]
 dev = [
-    "pytest>=9.1.0",
+    "pytest>=9.1.1",
     "pytest-cov>=6",
     "ruff>=0.15.20",
     "ty>=0.0.55",
