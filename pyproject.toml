@@ -34,7 +34,7 @@ dev = [
     "pytest>=9.1.1",
     "pytest-cov>=6",
     "ruff>=0.15.21",
-    "ty>=0.0.59",
+    "ty>=0.0.62",
     "pre-commit>=4.6.0",
     "nodeenv>=1.4.0", # Required for pre-commit, version without pkg_resources dependency
 ]
