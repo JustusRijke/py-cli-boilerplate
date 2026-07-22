@@ -33,7 +33,7 @@ jobs:
       # Therefore, make sure the newest version is available on the runner.
       - name: Install the newest version of Python
         if: matrix.dependencies == 'newest'
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: 3.x
           
